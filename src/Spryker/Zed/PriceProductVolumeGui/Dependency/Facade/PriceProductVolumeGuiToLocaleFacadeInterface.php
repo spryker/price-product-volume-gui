@@ -7,14 +7,10 @@
 
 namespace Spryker\Zed\PriceProductVolumeGui\Dependency\Facade;
 
-use Generated\Shared\Transfer\StoreTransfer;
-
-interface PriceProductVolumeGuiToStoreFacadeInterface
+interface PriceProductVolumeGuiToLocaleFacadeInterface
 {
     /**
-     * @param string $storeName
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
+     * @return string
      */
-    public function getStoreByName($storeName): StoreTransfer;
+    public function getCurrentLocaleName(): string;
 }
