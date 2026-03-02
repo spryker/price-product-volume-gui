@@ -153,12 +153,6 @@ class PriceVolumeController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $priceVolumeCollectionFormType
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     protected function executeAction(FormInterface $priceVolumeCollectionFormType, PriceProductTransfer $priceProductTransfer): PriceProductTransfer
     {
         $priceProductTransfer = $this->getFactory()
@@ -173,13 +167,6 @@ class PriceVolumeController extends AbstractController
         return $priceProductTransfer;
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \Spryker\Zed\PriceProductVolumeGui\Communication\Form\DataProvider\PriceVolumeCollectionDataProvider $dataProvider
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     protected function getPriceVolumeCollectionFormType(
         Request $request,
         PriceVolumeCollectionDataProvider $dataProvider,
@@ -198,12 +185,6 @@ class PriceVolumeController extends AbstractController
         return $priceVolumeCollectionFormType;
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \Spryker\Zed\PriceProductVolumeGui\Communication\Form\DataProvider\PriceVolumeCollectionDataProvider $dataProvider
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     protected function getPriceProductTransfer(Request $request, PriceVolumeCollectionDataProvider $dataProvider): PriceProductTransfer
     {
         $priceProductTransfer = $dataProvider->getPriceProductTransfer(
@@ -218,11 +199,6 @@ class PriceVolumeController extends AbstractController
         return $priceProductTransfer;
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return string
-     */
     protected function getEditUrl(Request $request): string
     {
         $query = [
@@ -237,11 +213,6 @@ class PriceVolumeController extends AbstractController
         return $this->generateUrl(static::PRICE_PRODUCT_VOLUME_EDIT_URL, $query);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return string
-     */
     protected function getExitUrl(Request $request): string
     {
         if ($request->get(static::REQUEST_PARAM_ID_PRODUCT_CONCRETE)) {
@@ -251,11 +222,6 @@ class PriceVolumeController extends AbstractController
         return $this->getAbstractProductExitUrl($request);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return string
-     */
     protected function getConcreteProductExitUrl(Request $request): string
     {
         $query = [
@@ -266,11 +232,6 @@ class PriceVolumeController extends AbstractController
         return $this->generateUrl(static::PRODUCT_CONCRETE_EDIT_URL, array_merge($query, $this->getDefaultProductExitUrlQuery($request)), $this->getUrlOptions('price'));
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return string
-     */
     protected function getAbstractProductExitUrl(Request $request): string
     {
         $query = [
@@ -280,11 +241,6 @@ class PriceVolumeController extends AbstractController
         return $this->generateUrl(static::PRODUCT_ABSTRACT_EDIT_URL, array_merge($query, $this->getDefaultProductExitUrlQuery($request)), $this->getUrlOptions('price_and_tax'));
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     protected function getDefaultProductExitUrlQuery(Request $request): array
     {
         return [
@@ -304,11 +260,6 @@ class PriceVolumeController extends AbstractController
         return urldecode(Url::generate($url, $query, $options)->build());
     }
 
-    /**
-     * @param string $fragment
-     *
-     * @return array
-     */
     protected function getUrlOptions(string $fragment): array
     {
         return [

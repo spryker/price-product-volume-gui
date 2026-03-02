@@ -79,11 +79,6 @@ class PriceVolumeCollectionFormType extends AbstractType
             ->addGrossPriceField($builder, $options);
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -173,9 +168,6 @@ class PriceVolumeCollectionFormType extends AbstractType
         return $this;
     }
 
-    /**
-     * @return array
-     */
     protected function getVolumesConstraints(): array
     {
         $volumesConstraints = [];
@@ -187,9 +179,6 @@ class PriceVolumeCollectionFormType extends AbstractType
         return $volumesConstraints;
     }
 
-    /**
-     * @return \Closure
-     */
     protected function getVolumesConstraintsCallback(): Closure
     {
         $savedPriceProductVolumeItemTransfers = [];

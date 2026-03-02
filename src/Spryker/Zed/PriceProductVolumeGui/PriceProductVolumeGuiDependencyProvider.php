@@ -45,11 +45,6 @@ class PriceProductVolumeGuiDependencyProvider extends AbstractBundleDependencyPr
      */
     public const SERVICE_UTIL_ENCODING = 'SERVICE_UTIL_ENCODING';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -63,11 +58,6 @@ class PriceProductVolumeGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCurrencyFacade(Container $container): Container
     {
         $container->set(static::FACADE_CURRENCY, function (Container $container) {
@@ -77,11 +67,6 @@ class PriceProductVolumeGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPriceProductFacade(Container $container): Container
     {
         $container->set(static::FACADE_PRICE_PRODUCT, function (Container $container) {
@@ -91,11 +76,6 @@ class PriceProductVolumeGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container) {
@@ -105,11 +85,6 @@ class PriceProductVolumeGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {
@@ -119,11 +94,6 @@ class PriceProductVolumeGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addLocaleFacade(Container $container): Container
     {
         $container->set(static::FACADE_LOCALE, function (Container $container) {

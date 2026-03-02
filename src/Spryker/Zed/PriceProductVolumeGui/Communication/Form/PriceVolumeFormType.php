@@ -67,11 +67,6 @@ class PriceVolumeFormType extends AbstractType
             ->addNetPriceField($builder, $options);
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -158,9 +153,6 @@ class PriceVolumeFormType extends AbstractType
         return $this;
     }
 
-    /**
-     * @return \Symfony\Component\Form\CallbackTransformer
-     */
     protected function getPriceModelTransformer(): CallbackTransformer
     {
         return new CallbackTransformer(

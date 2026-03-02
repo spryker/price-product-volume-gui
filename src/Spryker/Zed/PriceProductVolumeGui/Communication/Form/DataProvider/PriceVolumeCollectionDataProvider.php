@@ -108,14 +108,6 @@ class PriceVolumeCollectionDataProvider
      */
     protected $config;
 
-    /**
-     * @param \Spryker\Zed\PriceProductVolumeGui\Dependency\Facade\PriceProductVolumeGuiToPriceProductFacadeInterface $priceProductFacade
-     * @param \Spryker\Zed\PriceProductVolumeGui\Dependency\Facade\PriceProductVolumeGuiToCurrencyFacadeInterface $currencyFacade
-     * @param \Spryker\Zed\PriceProductVolumeGui\Dependency\Facade\PriceProductVolumeGuiToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\PriceProductVolumeGui\Dependency\Facade\PriceProductVolumeGuiToLocaleFacadeInterface $localeFacade
-     * @param \Spryker\Zed\PriceProductVolumeGui\Dependency\Service\PriceProductVolumeGuiToUtilEncodingServiceInterface $utilEncodingService
-     * @param \Spryker\Zed\PriceProductVolumeGui\PriceProductVolumeGuiConfig $config
-     */
     public function __construct(
         PriceProductVolumeGuiToPriceProductFacadeInterface $priceProductFacade,
         PriceProductVolumeGuiToCurrencyFacadeInterface $currencyFacade,
@@ -132,13 +124,6 @@ class PriceVolumeCollectionDataProvider
         $this->config = $config;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     * @param int $idProductAbstract
-     * @param int|null $idProductConcrete
-     *
-     * @return array
-     */
     public function getData(PriceProductTransfer $priceProductTransfer, int $idProductAbstract, ?int $idProductConcrete): array
     {
         $data = [];
@@ -262,14 +247,6 @@ class PriceVolumeCollectionDataProvider
         return $priceProductVolumeItemTransfers;
     }
 
-    /**
-     * @param string $storeName
-     * @param string $currencyCode
-     * @param array $priceDimension
-     * @param string|null $priceType
-     *
-     * @return \Generated\Shared\Transfer\PriceProductCriteriaTransfer
-     */
     protected function createPriceProductCriteriaTransfer(
         string $storeName,
         string $currencyCode,
@@ -290,11 +267,6 @@ class PriceVolumeCollectionDataProvider
         return $priceProductCriteriaTransfer;
     }
 
-    /**
-     * @param array $priceDimension
-     *
-     * @return \Generated\Shared\Transfer\PriceProductDimensionTransfer
-     */
     protected function createPriceProductDimensionTransfer(array $priceDimension): PriceProductDimensionTransfer
     {
         $priceProductDimensionTransfer = (new PriceProductDimensionTransfer())
@@ -307,11 +279,6 @@ class PriceVolumeCollectionDataProvider
         return $priceProductDimensionTransfer;
     }
 
-    /**
-     * @param string $storeName
-     *
-     * @return int
-     */
     protected function getIdStoreByName(string $storeName): int
     {
         $storeTransfer = $this->storeFacade->getStoreByName($storeName);
@@ -319,11 +286,6 @@ class PriceVolumeCollectionDataProvider
         return $storeTransfer->getIdStore();
     }
 
-    /**
-     * @param string $currencyCode
-     *
-     * @return int
-     */
     protected function getIdCurrencyByCode(string $currencyCode): int
     {
         $currencyTransfer = $this->getCurrencyByCode($currencyCode);
@@ -331,21 +293,11 @@ class PriceVolumeCollectionDataProvider
         return $currencyTransfer->getIdCurrency();
     }
 
-    /**
-     * @param string $currencyCode
-     *
-     * @return \Generated\Shared\Transfer\CurrencyTransfer
-     */
     protected function getCurrencyByCode(string $currencyCode): CurrencyTransfer
     {
         return $this->currencyFacade->fromIsoCode($currencyCode);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return int
-     */
     protected function getDivisor(CurrencyTransfer $currencyTransfer): int
     {
         $fractionDigits = $currencyTransfer->getFractionDigits();
@@ -357,11 +309,6 @@ class PriceVolumeCollectionDataProvider
         return static::DEFAULT_DIVISOR;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return int
-     */
     protected function getFractionDigits(CurrencyTransfer $currencyTransfer): int
     {
         $fractionDigits = $currencyTransfer->getFractionDigits();

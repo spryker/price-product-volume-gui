@@ -37,9 +37,6 @@ class PriceProductVolumeGuiCommunicationFactory extends AbstractCommunicationFac
         return $this->getFormFactory()->create(PriceVolumeCollectionFormType::class, $data, $options);
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductVolumeGui\Communication\Form\DataProvider\PriceVolumeCollectionDataProvider
-     */
     public function createPriceVolumeCollectionDataProvider(): PriceVolumeCollectionDataProvider
     {
         return new PriceVolumeCollectionDataProvider(
@@ -52,9 +49,6 @@ class PriceProductVolumeGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductVolumeGui\Communication\Form\DataMapper\PriceVolumeCollectionDataMapperInterface
-     */
     public function createPriceVolumeCollectionDataMapper(): PriceVolumeCollectionDataMapperInterface
     {
         return new PriceVolumeCollectionDataMapper(
@@ -63,9 +57,6 @@ class PriceProductVolumeGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductVolumeGui\Communication\Form\FormHandler\PriceVolumeCollectionFormHandler
-     */
     public function createPriceVolumeCollectionFormHandler(): PriceVolumeCollectionFormHandler
     {
         return new PriceVolumeCollectionFormHandler(
@@ -74,41 +65,26 @@ class PriceProductVolumeGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductVolumeGui\Dependency\Facade\PriceProductVolumeGuiToCurrencyFacadeInterface
-     */
     public function getCurrencyFacade(): PriceProductVolumeGuiToCurrencyFacadeInterface
     {
         return $this->getProvidedDependency(PriceProductVolumeGuiDependencyProvider::FACADE_CURRENCY);
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductVolumeGui\Dependency\Facade\PriceProductVolumeGuiToPriceProductFacadeInterface
-     */
     public function getPriceProductFacade(): PriceProductVolumeGuiToPriceProductFacadeInterface
     {
         return $this->getProvidedDependency(PriceProductVolumeGuiDependencyProvider::FACADE_PRICE_PRODUCT);
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductVolumeGui\Dependency\Facade\PriceProductVolumeGuiToStoreFacadeInterface
-     */
     public function getStoreFacade(): PriceProductVolumeGuiToStoreFacadeInterface
     {
         return $this->getProvidedDependency(PriceProductVolumeGuiDependencyProvider::FACADE_STORE);
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductVolumeGui\Dependency\Facade\PriceProductVolumeGuiToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): PriceProductVolumeGuiToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(PriceProductVolumeGuiDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductVolumeGui\Dependency\Service\PriceProductVolumeGuiToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): PriceProductVolumeGuiToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(PriceProductVolumeGuiDependencyProvider::SERVICE_UTIL_ENCODING);

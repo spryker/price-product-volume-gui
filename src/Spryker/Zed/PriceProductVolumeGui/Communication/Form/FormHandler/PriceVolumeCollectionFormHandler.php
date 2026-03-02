@@ -24,10 +24,6 @@ class PriceVolumeCollectionFormHandler
      */
     protected $priceVolumeCollectionDataMapper;
 
-    /**
-     * @param \Spryker\Zed\PriceProductVolumeGui\Dependency\Facade\PriceProductVolumeGuiToPriceProductFacadeInterface $productFacade
-     * @param \Spryker\Zed\PriceProductVolumeGui\Communication\Form\DataMapper\PriceVolumeCollectionDataMapperInterface $priceVolumeCollectionDataMapper
-     */
     public function __construct(
         PriceProductVolumeGuiToPriceProductFacadeInterface $productFacade,
         PriceVolumeCollectionDataMapperInterface $priceVolumeCollectionDataMapper

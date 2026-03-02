@@ -27,10 +27,6 @@ class PriceVolumeCollectionDataMapper implements PriceVolumeCollectionDataMapper
      */
     protected $config;
 
-    /**
-     * @param \Spryker\Zed\PriceProductVolumeGui\Dependency\Service\PriceProductVolumeGuiToUtilEncodingServiceInterface $utilEncodingService
-     * @param \Spryker\Zed\PriceProductVolumeGui\PriceProductVolumeGuiConfig $config
-     */
     public function __construct(
         PriceProductVolumeGuiToUtilEncodingServiceInterface $utilEncodingService,
         PriceProductVolumeGuiConfig $config

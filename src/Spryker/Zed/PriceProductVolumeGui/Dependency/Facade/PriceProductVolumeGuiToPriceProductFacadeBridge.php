@@ -55,11 +55,6 @@ class PriceProductVolumeGuiToPriceProductFacadeBridge implements PriceProductVol
             ->findProductConcretePricesWithoutPriceExtraction($idProductConcrete, $idProductAbstract, $priceProductCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     public function persistPriceProductStore(PriceProductTransfer $priceProductTransfer): PriceProductTransfer
     {
         return $this->priceProductFacade->persistPriceProductStore($priceProductTransfer);
