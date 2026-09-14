@@ -171,10 +171,10 @@ class PriceVolumeCollectionFormType extends AbstractType
     protected function getVolumesConstraints(): array
     {
         $volumesConstraints = [];
-        $volumesConstraints[] = new Callback([
-            'callback' => $this->getVolumesConstraintsCallback(),
-            'groups' => [static::VALIDATION_VOLUMES_GROUP],
-        ]);
+        $volumesConstraints[] = new Callback(
+            callback: $this->getVolumesConstraintsCallback(),
+            groups: [static::VALIDATION_VOLUMES_GROUP],
+        );
 
         return $volumesConstraints;
     }
